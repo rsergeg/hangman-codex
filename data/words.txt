@@ -1,0 +1,15 @@
+algorithm
+browser
+godot
+variable
+function
+network
+canvas
+signal
+project
+keyboard
+random
+webgame
+script
+terminal
+repository
