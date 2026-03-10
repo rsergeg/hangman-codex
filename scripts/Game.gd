@@ -13,6 +13,7 @@ const MAX_MISSES := 6
 var words: PackedStringArray = []
 var selected_word := ""
 var guessed_letters: Dictionary = {}
+var letter_buttons: Dictionary = {}
 var misses := 0
 
 func _ready() -> void:
@@ -36,6 +37,7 @@ func load_words() -> void:
 func build_keyboard() -> void:
 	for child in keyboard_container.get_children():
 		child.queue_free()
+	letter_buttons.clear()
 
 	for code in range(65, 91):
 		var letter := char(code)
@@ -43,8 +45,9 @@ func build_keyboard() -> void:
 		button.text = letter
 		button.custom_minimum_size = Vector2(44, 44)
 		button.focus_mode = Control.FOCUS_NONE
-		button.pressed.connect(on_letter_pressed.bind(letter, button))
+		button.pressed.connect(_on_letter_button_pressed.bind(letter))
 		keyboard_container.add_child(button)
+		letter_buttons[letter] = button
 
 func start_new_game() -> void:
 	if words.is_empty():
@@ -63,18 +66,44 @@ func start_new_game() -> void:
 	status_label.text = "Pick a letter"
 	update_ui()
 
-func on_letter_pressed(letter: String, button: Button) -> void:
+func _unhandled_input(event: InputEvent) -> void:
+	if not (event is InputEventKey):
+		return
+
+	var key_event := event as InputEventKey
+	if not key_event.pressed or key_event.echo:
+		return
+
+	if key_event.keycode < KEY_A or key_event.keycode > KEY_Z:
+		return
+
+	var letter := char(key_event.keycode).to_upper()
+	process_guess(letter)
+
+func _on_letter_button_pressed(letter: String) -> void:
+	get_viewport().gui_release_focus()
+	process_guess(letter)
+
+func process_guess(letter: String) -> void:
 	if guessed_letters.has(letter):
 		return
 
 	guessed_letters[letter] = true
-	button.disabled = true
+	disable_letter_button(letter)
 
 	if selected_word.find(letter) == -1:
 		misses += 1
 
 	update_ui()
 	check_game_state()
+
+func disable_letter_button(letter: String) -> void:
+	if not letter_buttons.has(letter):
+		return
+
+	var button := letter_buttons[letter] as Button
+	if button:
+		button.disabled = true
 
 func update_ui() -> void:
 	var masked_letters: PackedStringArray = []
