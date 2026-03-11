@@ -1,1 +1,24 @@
-* text=auto
+# Normalize all text files to LF in repo
+* text=auto eol=lf
+
+# Godot config files should always be LF
+*.godot text eol=lf
+*.cfg   text eol=lf
+*.tscn  text eol=lf
+*.tres  text eol=lf
+*.gd    text eol=lf
+*.txt   text eol=lf
+*.md    text eol=lf
+
+# Binary assets (never touch line endings)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.ttf binary
+*.otf binary
+*.wasm binary
+*.pck binary
