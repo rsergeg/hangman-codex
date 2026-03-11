@@ -11,7 +11,7 @@ func set_wrong_guesses(value: int) -> void:
 func _draw() -> void:
 	var width := size.x
 	var height := size.y
-	var base_scale := min(width, height)
+	var base_scale : float = min(width, height)
 	var line_color := Color("#dbeafe")
 	var body_color := Color("#fca5a5")
 	var thickness := 6.0
