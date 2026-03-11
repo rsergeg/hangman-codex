@@ -96,6 +96,7 @@ func start_new_game() -> void:
 	hint_visible = false
 	hint_label.text = ""
 	hint_button.button_pressed = false
+	hint_button.text = "Show Hint"
 	guessed_letters.clear()
 	misses = 0
 
@@ -125,6 +126,7 @@ func _on_letter_button_pressed(letter: String) -> void:
 
 func _on_hint_button_pressed() -> void:
 	hint_visible = hint_button.button_pressed
+	hint_button.text = "Hide Hint" if hint_visible else "Show Hint"
 	hint_label.text = selected_hint if hint_visible else ""
 
 func _on_level_button_pressed() -> void:
