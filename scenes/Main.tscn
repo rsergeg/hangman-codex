@@ -21,6 +21,27 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0588235, 0.0941176, 0.164706, 1)
 
+[node name="HintButton" type="Button" parent="." unique_id=133700001]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1110.0
+offset_top = 28.0
+offset_right = 1248.0
+offset_bottom = 76.0
+text = "Hint"
+toggle_mode = true
+
+[node name="HintLabel" type="Label" parent="." unique_id=133700002]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 900.0
+offset_top = 82.0
+offset_right = 1248.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 20
+text = ""
+horizontal_alignment = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=905378178]
 layout_mode = 1
 anchors_preset = 15
@@ -68,13 +89,24 @@ theme_override_font_sizes/font_size = 22
 text = "Wrong guesses: 0/6"
 horizontal_alignment = 1
 
-[node name="KeyboardContainer" type="HFlowContainer" parent="MarginContainer/VBoxContainer" unique_id=1898219011]
-unique_name_in_owner = true
+[node name="KeyboardContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1898219011]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/h_separation = 8
-theme_override_constants/v_separation = 8
+theme_override_constants/separation = 8
+
+[node name="KeyboardRow1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/KeyboardContainer" unique_id=1898219012]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
 alignment = 1
+theme_override_constants/separation = 8
+
+[node name="KeyboardRow2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/KeyboardContainer" unique_id=1898219013]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+theme_override_constants/separation = 8
 
 [node name="StatusLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2130675998]
 unique_name_in_owner = true
@@ -84,9 +116,18 @@ theme_override_font_sizes/font_size = 28
 text = "Pick a letter"
 horizontal_alignment = 1
 
-[node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=252445413]
-unique_name_in_owner = true
+[node name="ButtonsRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=133700003]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 8
+alignment = 1
+theme_override_constants/separation = 12
+
+[node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsRow" unique_id=252445413]
+unique_name_in_owner = true
+layout_mode = 2
 text = "New Game"
+
+[node name="LevelButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsRow" unique_id=133700004]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Easy"

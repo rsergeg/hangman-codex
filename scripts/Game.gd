@@ -1,17 +1,26 @@
 extends Control
 
-const WORDS_PATH := "res://data/words.txt"
+const EASY_WORDS_PATH := "res://data/words_easy.txt"
+const MEDIUM_WORDS_PATH := "res://data/words_medium.txt"
 const MAX_MISSES := 6
 
 @onready var hangman_canvas: HangmanCanvas = %HangmanCanvas
 @onready var word_label: Label = %WordLabel
 @onready var wrong_guesses_label: Label = %WrongGuessesLabel
 @onready var status_label: Label = %StatusLabel
-@onready var keyboard_container: HFlowContainer = %KeyboardContainer
+@onready var keyboard_row_1: HBoxContainer = %KeyboardRow1
+@onready var keyboard_row_2: HBoxContainer = %KeyboardRow2
 @onready var new_game_button: Button = %NewGameButton
+@onready var hint_button: Button = %HintButton
+@onready var hint_label: Label = %HintLabel
+@onready var level_button: Button = %LevelButton
 
-var words: PackedStringArray = []
+var easy_words: Array[Dictionary] = []
+var medium_words: Array[Dictionary] = []
+var current_level := "easy"
 var selected_word := ""
+var selected_hint := ""
+var hint_visible := false
 var guessed_letters: Dictionary = {}
 var letter_buttons: Dictionary = {}
 var misses := 0
@@ -21,22 +30,42 @@ func _ready() -> void:
 	load_words()
 	build_keyboard()
 	new_game_button.pressed.connect(start_new_game)
+	hint_button.pressed.connect(_on_hint_button_pressed)
+	level_button.pressed.connect(_on_level_button_pressed)
+	level_button.text = "Easy"
 	start_new_game()
 
 func load_words() -> void:
-	words.clear()
-	var file := FileAccess.open(WORDS_PATH, FileAccess.READ)
+	easy_words = _load_words_from_file(EASY_WORDS_PATH)
+	medium_words = _load_words_from_file(MEDIUM_WORDS_PATH)
+
+func _load_words_from_file(path: String) -> Array[Dictionary]:
+	var loaded_words: Array[Dictionary] = []
+	var file := FileAccess.open(path, FileAccess.READ)
 	if file == null:
-		push_error("Could not open words file: %s" % WORDS_PATH)
-		return
+		push_error("Could not open words file: %s" % path)
+		return loaded_words
 
 	while not file.eof_reached():
 		var line := file.get_line().strip_edges().to_upper()
-		if line.length() > 0:
-			words.append(line)
+		if line.is_empty():
+			continue
+
+		var parts := line.split(",", false, 1)
+		if parts.size() < 2:
+			continue
+
+		loaded_words.append({
+			"word": parts[0].strip_edges(),
+			"hint": parts[1].strip_edges(),
+		})
+
+	return loaded_words
 
 func build_keyboard() -> void:
-	for child in keyboard_container.get_children():
+	for child in keyboard_row_1.get_children():
+		child.queue_free()
+	for child in keyboard_row_2.get_children():
 		child.queue_free()
 	letter_buttons.clear()
 
@@ -47,21 +76,30 @@ func build_keyboard() -> void:
 		button.custom_minimum_size = Vector2(44, 44)
 		button.focus_mode = Control.FOCUS_NONE
 		button.pressed.connect(_on_letter_button_pressed.bind(letter))
-		keyboard_container.add_child(button)
+		if code <= 77:
+			keyboard_row_1.add_child(button)
+		else:
+			keyboard_row_2.add_child(button)
 		letter_buttons[letter] = button
 
 func start_new_game() -> void:
-	if words.is_empty():
-		status_label.text = "No words loaded. Add words to data/words.txt"
+	var active_words := easy_words if current_level == "easy" else medium_words
+	if active_words.is_empty():
+		status_label.text = "No words loaded for %s level." % current_level.capitalize()
 		return
 
 	var rng := RandomNumberGenerator.new()
 	rng.randomize()
-	selected_word = words[rng.randi_range(0, words.size() - 1)]
+	var entry := active_words[rng.randi_range(0, active_words.size() - 1)]
+	selected_word = String(entry.get("word", ""))
+	selected_hint = String(entry.get("hint", ""))
+	hint_visible = false
+	hint_label.text = ""
+	hint_button.button_pressed = false
 	guessed_letters.clear()
 	misses = 0
 
-	for button: Button in keyboard_container.get_children():
+	for button: Button in _all_keyboard_buttons():
 		button.disabled = false
 
 	status_label.text = "Pick a letter"
@@ -84,6 +122,16 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_letter_button_pressed(letter: String) -> void:
 	get_viewport().gui_release_focus()
 	process_guess(letter)
+
+func _on_hint_button_pressed() -> void:
+	hint_visible = not hint_visible
+	hint_button.button_pressed = hint_visible
+	hint_label.text = selected_hint if hint_visible else ""
+
+func _on_level_button_pressed() -> void:
+	current_level = "medium" if current_level == "easy" else "easy"
+	level_button.text = current_level.capitalize()
+	start_new_game()
 
 func process_guess(letter: String) -> void:
 	if guessed_letters.has(letter):
@@ -142,6 +190,16 @@ func is_word_complete() -> bool:
 	return true
 
 func set_keyboard_enabled(enabled: bool) -> void:
-	for button: Button in keyboard_container.get_children():
+	for button: Button in _all_keyboard_buttons():
 		if not guessed_letters.has(button.text):
 			button.disabled = not enabled
+
+func _all_keyboard_buttons() -> Array[Button]:
+	var buttons: Array[Button] = []
+	for child in keyboard_row_1.get_children():
+		if child is Button:
+			buttons.append(child)
+	for child in keyboard_row_2.get_children():
+		if child is Button:
+			buttons.append(child)
+	return buttons
