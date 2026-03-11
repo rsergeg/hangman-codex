@@ -87,25 +87,6 @@ size_flags_horizontal = 4
 alignment = 1
 theme_override_constants/separation = 8
 
-[node name="HintRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="HintButton" type="Button" parent="MarginContainer/VBoxContainer/HintRow" unique_id=133700001]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Show Hint"
-toggle_mode = true
-
-[node name="HintLabel" type="Label" parent="MarginContainer/VBoxContainer/HintRow" unique_id=133700002]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 20
-text = ""
-horizontal_alignment = 0
-
 [node name="StatusLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2130675998]
 unique_name_in_owner = true
 layout_mode = 2
@@ -129,3 +110,29 @@ text = "New Game"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Easy"
+
+[node name="HintContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 120.0
+alignment = 2
+
+[node name="HintButton" type="Button" parent="HintContainer" unique_id=133700001]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Show Hint"
+toggle_mode = true
+
+[node name="HintLabel" type="Label" parent="HintContainer" unique_id=133700002]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = ""
+horizontal_alignment = 2
+autowrap_mode = 3
