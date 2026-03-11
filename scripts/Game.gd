@@ -124,8 +124,7 @@ func _on_letter_button_pressed(letter: String) -> void:
 	process_guess(letter)
 
 func _on_hint_button_pressed() -> void:
-	hint_visible = not hint_visible
-	hint_button.button_pressed = hint_visible
+	hint_visible = hint_button.button_pressed
 	hint_label.text = selected_hint if hint_visible else ""
 
 func _on_level_button_pressed() -> void:
