@@ -40,6 +40,7 @@ func load_words() -> void:
 	medium_words = _load_words_from_file(MEDIUM_WORDS_PATH)
 
 func _load_words_from_file(path: String) -> Array[Dictionary]:
+	print("Attempting to load scroll from: " + path)
 	var loaded_words: Array[Dictionary] = []
 	if not FileAccess.file_exists(path):
 		var runtime := "Web" if OS.has_feature("web") else OS.get_name()
