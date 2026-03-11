@@ -1,0 +1,454 @@
+[
+  {
+    "word": "APPLE",
+    "hint": "FRUIT"
+  },
+  {
+    "word": "ORANGE",
+    "hint": "FRUIT"
+  },
+  {
+    "word": "BANANA",
+    "hint": "FRUIT"
+  },
+  {
+    "word": "GRAPES",
+    "hint": "FRUIT"
+  },
+  {
+    "word": "PEACH",
+    "hint": "FRUIT"
+  },
+  {
+    "word": "LEMON",
+    "hint": "FRUIT"
+  },
+  {
+    "word": "CHERRY",
+    "hint": "FRUIT"
+  },
+  {
+    "word": "MANGO",
+    "hint": "FRUIT"
+  },
+  {
+    "word": "PAPAYA",
+    "hint": "FRUIT"
+  },
+  {
+    "word": "APRICOT",
+    "hint": "FRUIT"
+  },
+  {
+    "word": "MONDAY",
+    "hint": "DAY OF THE WEEK"
+  },
+  {
+    "word": "TUESDAY",
+    "hint": "DAY OF THE WEEK"
+  },
+  {
+    "word": "WEDNESDAY",
+    "hint": "DAY OF THE WEEK"
+  },
+  {
+    "word": "THURSDAY",
+    "hint": "DAY OF THE WEEK"
+  },
+  {
+    "word": "FRIDAY",
+    "hint": "DAY OF THE WEEK"
+  },
+  {
+    "word": "SATURDAY",
+    "hint": "DAY OF THE WEEK"
+  },
+  {
+    "word": "SUNDAY",
+    "hint": "DAY OF THE WEEK"
+  },
+  {
+    "word": "YELLOW",
+    "hint": "COLOR"
+  },
+  {
+    "word": "PURPLE",
+    "hint": "COLOR"
+  },
+  {
+    "word": "ORANGE_COLOR",
+    "hint": "COLOR"
+  },
+  {
+    "word": "VIOLET",
+    "hint": "COLOR"
+  },
+  {
+    "word": "INDIGO",
+    "hint": "COLOR"
+  },
+  {
+    "word": "SCARLET",
+    "hint": "COLOR"
+  },
+  {
+    "word": "CRIMSON",
+    "hint": "COLOR"
+  },
+  {
+    "word": "SILVER",
+    "hint": "COLOR"
+  },
+  {
+    "word": "GOLDEN",
+    "hint": "COLOR"
+  },
+  {
+    "word": "MAROON",
+    "hint": "COLOR"
+  },
+  {
+    "word": "CAT",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "KITTEN",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "PUPPY",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "RABBIT",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "HAMSTER",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "MONKEY",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "PANDA",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "TIGER",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "LION",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "ZEBRA",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "HORSE",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "DONKEY",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "CAMEL",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "DOLPHIN",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "PARROT",
+    "hint": "BIRD"
+  },
+  {
+    "word": "EAGLE",
+    "hint": "BIRD"
+  },
+  {
+    "word": "ROBIN",
+    "hint": "BIRD"
+  },
+  {
+    "word": "PIGEON",
+    "hint": "BIRD"
+  },
+  {
+    "word": "PENGUIN",
+    "hint": "BIRD"
+  },
+  {
+    "word": "CHICKEN",
+    "hint": "BIRD"
+  },
+  {
+    "word": "SPARROW",
+    "hint": "BIRD"
+  },
+  {
+    "word": "TURKEY",
+    "hint": "BIRD"
+  },
+  {
+    "word": "DUCK",
+    "hint": "BIRD"
+  },
+  {
+    "word": "GOOSE",
+    "hint": "BIRD"
+  },
+  {
+    "word": "TABLE",
+    "hint": "FURNITURE"
+  },
+  {
+    "word": "CHAIR",
+    "hint": "FURNITURE"
+  },
+  {
+    "word": "SOFA",
+    "hint": "FURNITURE"
+  },
+  {
+    "word": "COUCH",
+    "hint": "FURNITURE"
+  },
+  {
+    "word": "DESK",
+    "hint": "FURNITURE"
+  },
+  {
+    "word": "SHELF",
+    "hint": "FURNITURE"
+  },
+  {
+    "word": "DRAWER",
+    "hint": "FURNITURE"
+  },
+  {
+    "word": "CUPBOARD",
+    "hint": "FURNITURE"
+  },
+  {
+    "word": "PILLOW",
+    "hint": "BEDDING"
+  },
+  {
+    "word": "BLANKET",
+    "hint": "BEDDING"
+  },
+  {
+    "word": "WINDOW",
+    "hint": "HOUSE PART"
+  },
+  {
+    "word": "DOOR",
+    "hint": "HOUSE PART"
+  },
+  {
+    "word": "ROOF",
+    "hint": "HOUSE PART"
+  },
+  {
+    "word": "KITCHEN",
+    "hint": "ROOM"
+  },
+  {
+    "word": "BEDROOM",
+    "hint": "ROOM"
+  },
+  {
+    "word": "BATHROOM",
+    "hint": "ROOM"
+  },
+  {
+    "word": "GARAGE",
+    "hint": "ROOM"
+  },
+  {
+    "word": "GARDEN",
+    "hint": "OUTDOORS"
+  },
+  {
+    "word": "FLOWER",
+    "hint": "PLANT"
+  },
+  {
+    "word": "ROSE",
+    "hint": "PLANT"
+  },
+  {
+    "word": "TULIP",
+    "hint": "PLANT"
+  },
+  {
+    "word": "DAISY",
+    "hint": "PLANT"
+  },
+  {
+    "word": "SUNFLOWER",
+    "hint": "PLANT"
+  },
+  {
+    "word": "RAIN",
+    "hint": "WEATHER"
+  },
+  {
+    "word": "STORM",
+    "hint": "WEATHER"
+  },
+  {
+    "word": "THUNDER",
+    "hint": "WEATHER"
+  },
+  {
+    "word": "LIGHTNING",
+    "hint": "WEATHER"
+  },
+  {
+    "word": "CLOUD",
+    "hint": "WEATHER"
+  },
+  {
+    "word": "RAINBOW",
+    "hint": "WEATHER"
+  },
+  {
+    "word": "SUMMER",
+    "hint": "SEASON"
+  },
+  {
+    "word": "WINTER",
+    "hint": "SEASON"
+  },
+  {
+    "word": "AUTUMN",
+    "hint": "SEASON"
+  },
+  {
+    "word": "SPRING",
+    "hint": "SEASON"
+  },
+  {
+    "word": "MORNING",
+    "hint": "TIME OF DAY"
+  },
+  {
+    "word": "EVENING",
+    "hint": "TIME OF DAY"
+  },
+  {
+    "word": "MIDNIGHT",
+    "hint": "TIME OF DAY"
+  },
+  {
+    "word": "NOON",
+    "hint": "TIME OF DAY"
+  },
+  {
+    "word": "PENCIL",
+    "hint": "SCHOOL ITEM"
+  },
+  {
+    "word": "MARKER",
+    "hint": "SCHOOL ITEM"
+  },
+  {
+    "word": "ERASER",
+    "hint": "SCHOOL ITEM"
+  },
+  {
+    "word": "BACKPACK",
+    "hint": "SCHOOL ITEM"
+  },
+  {
+    "word": "NOTEBOOK",
+    "hint": "SCHOOL ITEM"
+  },
+  {
+    "word": "RULER",
+    "hint": "SCHOOL ITEM"
+  },
+  {
+    "word": "SCISSORS",
+    "hint": "SCHOOL ITEM"
+  },
+  {
+    "word": "LAPTOP",
+    "hint": "TECH"
+  },
+  {
+    "word": "KEYBOARD",
+    "hint": "TECH"
+  },
+  {
+    "word": "MOUSE",
+    "hint": "TECH"
+  },
+  {
+    "word": "SCREEN",
+    "hint": "TECH"
+  },
+  {
+    "word": "PHONE",
+    "hint": "TECH"
+  },
+  {
+    "word": "TABLET",
+    "hint": "TECH"
+  },
+  {
+    "word": "ROBOT",
+    "hint": "TECH"
+  },
+  {
+    "word": "ROCKET",
+    "hint": "SPACE"
+  },
+  {
+    "word": "PLANET",
+    "hint": "SPACE"
+  },
+  {
+    "word": "COMET",
+    "hint": "SPACE"
+  },
+  {
+    "word": "GALAXY",
+    "hint": "SPACE"
+  },
+  {
+    "word": "OCEAN",
+    "hint": "BODY OF WATER"
+  },
+  {
+    "word": "RIVER",
+    "hint": "BODY OF WATER"
+  },
+  {
+    "word": "ISLAND",
+    "hint": "GEOGRAPHY"
+  },
+  {
+    "word": "FOREST",
+    "hint": "GEOGRAPHY"
+  },
+  {
+    "word": "DESERT",
+    "hint": "GEOGRAPHY"
+  },
+  {
+    "word": "MOUNTAIN",
+    "hint": "GEOGRAPHY"
+  },
+  {
+    "word": "VALLEY",
+    "hint": "GEOGRAPHY"
+  }
+]
