@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk3k85814n6vp"
-valid=false
+uid="uid://fcx0cw8w726d"
+path="res://.godot/imported/BackgroundTexture2D.png-8ceaaf0d9f42fe9ae2a65361533f848a.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/graphics/BackgroundTexture2D.png"
+dest_files=["res://.godot/imported/BackgroundTexture2D.png-8ceaaf0d9f42fe9ae2a65361533f848a.ctex"]
 
 [params]
 
