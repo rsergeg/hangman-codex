@@ -1,0 +1,566 @@
+[
+  {
+    "word": "ELEPHANT",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "CROCODILE",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "ALLIGATOR",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "KANGAROO",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "CHIPMUNK",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "RACCOON",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "SQUIRREL",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "HEDGEHOG",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "PORCUPINE",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "ARMADILLO",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "FLAMINGO",
+    "hint": "BIRD"
+  },
+  {
+    "word": "NIGHTINGALE",
+    "hint": "BIRD"
+  },
+  {
+    "word": "WOODPECKER",
+    "hint": "BIRD"
+  },
+  {
+    "word": "BUTTERFLY",
+    "hint": "INSECT"
+  },
+  {
+    "word": "DRAGONFLY",
+    "hint": "INSECT"
+  },
+  {
+    "word": "GRASSHOPPER",
+    "hint": "INSECT"
+  },
+  {
+    "word": "LADYBUG",
+    "hint": "INSECT"
+  },
+  {
+    "word": "SCORPION",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "CHAMELEON",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "TARANTULA",
+    "hint": "ANIMAL"
+  },
+  {
+    "word": "TURQUOISE",
+    "hint": "COLOR"
+  },
+  {
+    "word": "MAGENTA",
+    "hint": "COLOR"
+  },
+  {
+    "word": "AQUAMARINE",
+    "hint": "COLOR"
+  },
+  {
+    "word": "LAVENDER",
+    "hint": "COLOR"
+  },
+  {
+    "word": "CHOCOLATE",
+    "hint": "COLOR"
+  },
+  {
+    "word": "SAPPHIRE",
+    "hint": "COLOR"
+  },
+  {
+    "word": "EMERALD",
+    "hint": "COLOR"
+  },
+  {
+    "word": "AMETHYST",
+    "hint": "COLOR"
+  },
+  {
+    "word": "BURGUNDY",
+    "hint": "COLOR"
+  },
+  {
+    "word": "CHARCOAL",
+    "hint": "COLOR"
+  },
+  {
+    "word": "ARGENTINA",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "AUSTRALIA",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "BRAZIL",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "CAMBODIA",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "CANADA",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "DENMARK",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "EGYPT",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "FINLAND",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "GERMANY",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "HUNGARY",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "ICELAND",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "IRELAND",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "ITALY",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "JAPAN",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "MEXICO",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "NIGERIA",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "NORWAY",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "POLAND",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "PORTUGAL",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "ROMANIA",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "RUSSIA",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "SPAIN",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "SWEDEN",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "SWITZERLAND",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "THAILAND",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "UKRAINE",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "VIETNAM",
+    "hint": "COUNTRY"
+  },
+  {
+    "word": "ATLANTIC",
+    "hint": "OCEAN"
+  },
+  {
+    "word": "PACIFIC",
+    "hint": "OCEAN"
+  },
+  {
+    "word": "INDIAN",
+    "hint": "OCEAN"
+  },
+  {
+    "word": "ARCTIC",
+    "hint": "OCEAN"
+  },
+  {
+    "word": "SOUTHERN",
+    "hint": "OCEAN"
+  },
+  {
+    "word": "EVEREST",
+    "hint": "MOUNTAIN"
+  },
+  {
+    "word": "KILIMANJARO",
+    "hint": "MOUNTAIN"
+  },
+  {
+    "word": "K2",
+    "hint": "MOUNTAIN"
+  },
+  {
+    "word": "DENALI",
+    "hint": "MOUNTAIN"
+  },
+  {
+    "word": "ELBRUS",
+    "hint": "MOUNTAIN"
+  },
+  {
+    "word": "ANDES",
+    "hint": "MOUNTAIN RANGE"
+  },
+  {
+    "word": "ALPS",
+    "hint": "MOUNTAIN RANGE"
+  },
+  {
+    "word": "HIMALAYAS",
+    "hint": "MOUNTAIN RANGE"
+  },
+  {
+    "word": "APPALACHIANS",
+    "hint": "MOUNTAIN RANGE"
+  },
+  {
+    "word": "MISSISSIPPI",
+    "hint": "RIVER"
+  },
+  {
+    "word": "AMAZON",
+    "hint": "RIVER"
+  },
+  {
+    "word": "NILE",
+    "hint": "RIVER"
+  },
+  {
+    "word": "DANUBE",
+    "hint": "RIVER"
+  },
+  {
+    "word": "RHINE",
+    "hint": "RIVER"
+  },
+  {
+    "word": "GANGES",
+    "hint": "RIVER"
+  },
+  {
+    "word": "YANGTZE",
+    "hint": "RIVER"
+  },
+  {
+    "word": "COLORADO",
+    "hint": "RIVER"
+  },
+  {
+    "word": "COLUMBIA",
+    "hint": "RIVER"
+  },
+  {
+    "word": "TENNESSEE",
+    "hint": "RIVER"
+  },
+  {
+    "word": "CALIFORNIA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "ARIZONA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "ALABAMA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "ALASKA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "ARKANSAS",
+    "hint": "US STATE"
+  },
+  {
+    "word": "COLORADO_STATE",
+    "hint": "US STATE"
+  },
+  {
+    "word": "DELAWARE",
+    "hint": "US STATE"
+  },
+  {
+    "word": "FLORIDA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "GEORGIA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "HAWAII",
+    "hint": "US STATE"
+  },
+  {
+    "word": "ILLINOIS",
+    "hint": "US STATE"
+  },
+  {
+    "word": "INDIANA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "KANSAS",
+    "hint": "US STATE"
+  },
+  {
+    "word": "KENTUCKY",
+    "hint": "US STATE"
+  },
+  {
+    "word": "LOUISIANA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "MARYLAND",
+    "hint": "US STATE"
+  },
+  {
+    "word": "MICHIGAN",
+    "hint": "US STATE"
+  },
+  {
+    "word": "MINNESOTA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "MISSOURI",
+    "hint": "US STATE"
+  },
+  {
+    "word": "MONTANA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "NEBRASKA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "NEVADA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "NEWMEXICO",
+    "hint": "US STATE"
+  },
+  {
+    "word": "NEWYORK",
+    "hint": "US STATE"
+  },
+  {
+    "word": "OKLAHOMA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "OREGON",
+    "hint": "US STATE"
+  },
+  {
+    "word": "PENNSYLVANIA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "TEXAS",
+    "hint": "US STATE"
+  },
+  {
+    "word": "UTAH",
+    "hint": "US STATE"
+  },
+  {
+    "word": "VIRGINIA",
+    "hint": "US STATE"
+  },
+  {
+    "word": "WASHINGTON",
+    "hint": "US STATE"
+  },
+  {
+    "word": "WISCONSIN",
+    "hint": "US STATE"
+  },
+  {
+    "word": "WYOMING",
+    "hint": "US STATE"
+  },
+  {
+    "word": "DOLPHINARIUM",
+    "hint": "PLACE WITH ANIMALS"
+  },
+  {
+    "word": "PLAYGROUND",
+    "hint": "LOCATION"
+  },
+  {
+    "word": "HOSPITAL",
+    "hint": "LOCATION"
+  },
+  {
+    "word": "AIRPORT",
+    "hint": "LOCATION"
+  },
+  {
+    "word": "RAILSTATION",
+    "hint": "LOCATION"
+  },
+  {
+    "word": "NOTEBOOK",
+    "hint": "OBJECT"
+  },
+  {
+    "word": "TELESCOPE",
+    "hint": "OBJECT"
+  },
+  {
+    "word": "MICROSCOPE",
+    "hint": "OBJECT"
+  },
+  {
+    "word": "ELEVATOR",
+    "hint": "OBJECT"
+  },
+  {
+    "word": "BINOCULARS",
+    "hint": "OBJECT"
+  },
+  {
+    "word": "FIREFIGHTER",
+    "hint": "JOB"
+  },
+  {
+    "word": "ASTRONAUT",
+    "hint": "JOB"
+  },
+  {
+    "word": "LIBRARIAN",
+    "hint": "JOB"
+  },
+  {
+    "word": "SCIENTIST",
+    "hint": "JOB"
+  },
+  {
+    "word": "ENGINEERING",
+    "hint": "FIELD"
+  },
+  {
+    "word": "CHEMISTRY",
+    "hint": "SCIENCE"
+  },
+  {
+    "word": "ASTRONOMY",
+    "hint": "SCIENCE"
+  },
+  {
+    "word": "GEOMETRY",
+    "hint": "MATH TOPIC"
+  },
+  {
+    "word": "TRIANGLE",
+    "hint": "SHAPE"
+  },
+  {
+    "word": "RECTANGLE",
+    "hint": "SHAPE"
+  },
+  {
+    "word": "DIAMOND",
+    "hint": "SHAPE"
+  },
+  {
+    "word": "PARALLELOGRAM",
+    "hint": "SHAPE"
+  },
+  {
+    "word": "COMPUTER",
+    "hint": "TECHNOLOGY"
+  },
+  {
+    "word": "INTERNET",
+    "hint": "TECHNOLOGY"
+  },
+  {
+    "word": "KEYBOARD_MED",
+    "hint": "TECHNOLOGY"
+  },
+  {
+    "word": "HEADPHONES",
+    "hint": "TECHNOLOGY"
+  },
+  {
+    "word": "SATELLITE",
+    "hint": "TECHNOLOGY"
+  }
+]

@@ -1,7 +1,7 @@
 extends Control
 
-const EASY_WORDS_PATH := "res://data/words_easy.txt"
-const MEDIUM_WORDS_PATH := "res://data/words_medium.txt"
+const EASY_WORDS_PATH := "res://data/words_easy.json"
+const MEDIUM_WORDS_PATH := "res://data/words_medium.json"
 const MAX_MISSES := 6
 
 @onready var hangman_canvas: HangmanCanvas = %HangmanCanvas
@@ -36,10 +36,10 @@ func _ready() -> void:
 	start_new_game()
 
 func load_words() -> void:
-	easy_words = _load_words_from_file(EASY_WORDS_PATH)
-	medium_words = _load_words_from_file(MEDIUM_WORDS_PATH)
+	easy_words = _load_words_from_json(EASY_WORDS_PATH)
+	medium_words = _load_words_from_json(MEDIUM_WORDS_PATH)
 
-func _load_words_from_file(path: String) -> Array[Dictionary]:
+func _load_words_from_json(path: String) -> Array[Dictionary]:
 	print("Attempting to load scroll from: " + path)
 	var loaded_words: Array[Dictionary] = []
 	if not FileAccess.file_exists(path):
@@ -53,18 +53,20 @@ func _load_words_from_file(path: String) -> Array[Dictionary]:
 		push_error("Could not open words file at path '%s' (runtime: %s)." % [path, runtime])
 		return loaded_words
 
-	while not file.eof_reached():
-		var line := file.get_line().strip_edges().to_upper()
-		if line.is_empty():
-			continue
+	var parsed := JSON.parse_string(file.get_as_text())
+	if not (parsed is Array):
+		push_error("Words JSON at path '%s' is not an array." % path)
+		return loaded_words
 
-		var parts := line.split(",", false, 1)
-		if parts.size() < 2:
+	for entry in parsed:
+		if not (entry is Dictionary):
+			continue
+		if not (entry.has("word") and entry.has("hint")):
 			continue
 
 		loaded_words.append({
-			"word": parts[0].strip_edges(),
-			"hint": parts[1].strip_edges(),
+			"word": String(entry["word"]),
+			"hint": String(entry["hint"]),
 		})
 
 	return loaded_words
