@@ -16,9 +16,9 @@ var _target_scale := base_flame_scale
 func _ready() -> void:
 	_rng.randomize()
 	_target_energy = base_energy
+	base_flame_scale = flame_sprite.scale
 	_target_scale = base_flame_scale
 	point_light.energy = base_energy
-	flame_sprite.scale = base_flame_scale
 
 func _process(delta: float) -> void:
 	_target_energy = base_energy + _rng.randf_range(-energy_variation, energy_variation)
