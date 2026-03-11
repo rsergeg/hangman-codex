@@ -41,9 +41,15 @@ func load_words() -> void:
 
 func _load_words_from_file(path: String) -> Array[Dictionary]:
 	var loaded_words: Array[Dictionary] = []
+	if not FileAccess.file_exists(path):
+		var runtime := "Web" if OS.has_feature("web") else OS.get_name()
+		push_error("Words file is not accessible at path '%s' (runtime: %s). Verify the filename and res:// path in the export." % [path, runtime])
+		return loaded_words
+
 	var file := FileAccess.open(path, FileAccess.READ)
 	if file == null:
-		push_error("Could not open words file: %s" % path)
+		var runtime := "Web" if OS.has_feature("web") else OS.get_name()
+		push_error("Could not open words file at path '%s' (runtime: %s)." % [path, runtime])
 		return loaded_words
 
 	while not file.eof_reached():
