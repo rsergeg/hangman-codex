@@ -17,6 +17,7 @@ var letter_buttons: Dictionary = {}
 var misses := 0
 
 func _ready() -> void:
+	print("Game.gd _ready(), owner:", get_owner(), " name:", name)
 	load_words()
 	build_keyboard()
 	new_game_button.pressed.connect(start_new_game)
