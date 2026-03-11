@@ -53,7 +53,7 @@ func _load_words_from_json(path: String) -> Array[Dictionary]:
 		push_error("Could not open words file at path '%s' (runtime: %s)." % [path, runtime])
 		return loaded_words
 
-	var parsed := JSON.parse_string(file.get_as_text())
+	var parsed: Variant = JSON.parse_string(file.get_as_text())
 	if not (parsed is Array):
 		push_error("Words JSON at path '%s' is not an array." % path)
 		return loaded_words
