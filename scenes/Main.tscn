@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c14i334ptcere" path="res://scripts/Game.gd" id="1"]
 [ext_resource type="Script" uid="uid://dqrbhrhbu1774" path="res://scripts/HangmanCanvas.gd" id="2"]
 [ext_resource type="Texture2D" path="res://assets/graphics/BackgroundTexture2D.png" id="3"]
-[ext_resource type="PackedScene" path="res://scenes/Torch.tscn" id="4"]
 
 [node name="Main" type="Control" unique_id=1051832179]
 layout_mode = 3
@@ -25,13 +24,9 @@ texture = ExtResource("3")
 texture_filter = 1
 texture_repeat = 1
 stretch_mode = 1
-modulate = Color(0.7, 0.7, 0.7, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.3, 0.35, 0.32, 1)
-
-[node name="Torch" parent="." instance=ExtResource("4")]
-position = Vector2(100, 300)
+color = Color(0.76, 0.84, 0.82, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=905378178]
 layout_mode = 1
