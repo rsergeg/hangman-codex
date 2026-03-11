@@ -35,6 +35,8 @@ theme_override_constants/margin_bottom = 24
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=318454267]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 16
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1991343119]
@@ -47,11 +49,13 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 280)
 layout_mode = 2
+size_flags_horizontal = 3
 script = ExtResource("2")
 
 [node name="WordLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1455152351]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 42
 text = "_ _ _ _"
 horizontal_alignment = 1
@@ -59,6 +63,7 @@ horizontal_alignment = 1
 [node name="WrongGuessesLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1526385381]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 22
 text = "Wrong guesses: 0/6"
 horizontal_alignment = 1
@@ -66,7 +71,7 @@ horizontal_alignment = 1
 [node name="KeyboardContainer" type="HFlowContainer" parent="MarginContainer/VBoxContainer" unique_id=1898219011]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 alignment = 1
@@ -74,6 +79,7 @@ alignment = 1
 [node name="StatusLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2130675998]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 28
 text = "Pick a letter"
 horizontal_alignment = 1
@@ -81,4 +87,6 @@ horizontal_alignment = 1
 [node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=252445413]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 text = "New Game"
