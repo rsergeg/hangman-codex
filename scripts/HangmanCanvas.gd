@@ -11,6 +11,7 @@ func set_wrong_guesses(value: int) -> void:
 func _draw() -> void:
 	var width := size.x
 	var height := size.y
+	var base_scale := min(width, height)
 	var line_color := Color("#dbeafe")
 	var body_color := Color("#fca5a5")
 	var thickness := 6.0
@@ -21,17 +22,25 @@ func _draw() -> void:
 	draw_line(Vector2(width * 0.22, height * 0.1), Vector2(width * 0.62, height * 0.1), line_color, thickness)
 	draw_line(Vector2(width * 0.62, height * 0.1), Vector2(width * 0.62, height * 0.2), line_color, thickness)
 
-	var head_center := Vector2(width * 0.62, height * 0.29)
-	var neck := Vector2(width * 0.62, height * 0.38)
-	var hip := Vector2(width * 0.62, height * 0.60)
-	var left_hand := Vector2(width * 0.50, height * 0.48)
-	var right_hand := Vector2(width * 0.74, height * 0.48)
-	var left_foot := Vector2(width * 0.52, height * 0.78)
-	var right_foot := Vector2(width * 0.72, height * 0.78)
+	var rope_end := Vector2(width * 0.62, height * 0.2)
+	var head_radius := base_scale * 0.08
+	var torso_length := base_scale * 0.24
+	var arm_length := base_scale * 0.14
+	var leg_length := base_scale * 0.18
+	var leg_spread := base_scale * 0.10
+
+	# Keep all body parts centered and connected under the rope end.
+	var head_center := rope_end + Vector2(0.0, head_radius)
+	var neck := head_center + Vector2(0.0, head_radius)
+	var hip := neck + Vector2(0.0, torso_length)
+	var left_hand := neck + Vector2(-arm_length, arm_length)
+	var right_hand := neck + Vector2(arm_length, arm_length)
+	var left_foot := hip + Vector2(-leg_spread, leg_length)
+	var right_foot := hip + Vector2(leg_spread, leg_length)
 
 	if wrong_guesses >= 1:
-		draw_circle(head_center, width * 0.06, body_color)
-		draw_circle(head_center, width * 0.045, Color("#0f172a"))
+		draw_circle(head_center, head_radius, body_color)
+		draw_circle(head_center, head_radius * 0.75, Color("#0f172a"))
 	if wrong_guesses >= 2:
 		draw_line(neck, hip, body_color, thickness)
 	if wrong_guesses >= 3:
