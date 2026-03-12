@@ -118,25 +118,19 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Easy"
 
-[node name="HintContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -320.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = 120.0
+[node name="HintContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
 alignment = 2
 
-[node name="HintButton" type="Button" parent="HintContainer" unique_id=133700001]
+[node name="HintButton" type="Button" parent="MarginContainer/VBoxContainer/HintContainer" unique_id=133700001]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 text = "Show Hint"
 toggle_mode = true
 
-[node name="HintLabel" type="Label" parent="HintContainer" unique_id=133700002]
+[node name="HintLabel" type="Label" parent="MarginContainer/VBoxContainer/HintContainer" unique_id=133700002]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
