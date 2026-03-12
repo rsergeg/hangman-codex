@@ -17,10 +17,20 @@ func _draw() -> void:
 	var thickness := 6.0
 
 	# Gallows
-	draw_line(Vector2(width * 0.1, height * 0.9), Vector2(width * 0.8, height * 0.9), line_color, thickness)
-	draw_line(Vector2(width * 0.22, height * 0.9), Vector2(width * 0.22, height * 0.1), line_color, thickness)
-	draw_line(Vector2(width * 0.22, height * 0.1), Vector2(width * 0.62, height * 0.1), line_color, thickness)
-	draw_line(Vector2(width * 0.62, height * 0.1), Vector2(width * 0.62, height * 0.2), line_color, thickness)
+	var runes := [
+		Vector2(width * 0.1, height * 0.9),
+		Vector2(width * 0.8, height * 0.9),
+		Vector2(width * 0.22, height * 0.9),
+		Vector2(width * 0.22, height * 0.1),
+		Vector2(width * 0.22, height * 0.1),
+		Vector2(width * 0.62, height * 0.1),
+		Vector2(width * 0.62, height * 0.1),
+		Vector2(width * 0.62, height * 0.2),
+	]
+	for i in range(0, runes.size(), 2):
+		var pos: Vector2 = runes[i]
+		var next_pos: Vector2 = runes[i + 1]
+		draw_line(pos, next_pos, line_color, thickness)
 
 	var rope_end := Vector2(width * 0.62, height * 0.2)
 	var head_radius := base_scale * 0.08
