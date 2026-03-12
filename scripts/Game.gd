@@ -19,13 +19,13 @@ const MAX_MISSES := 6
 
 var easy_words: Array[Dictionary] = []
 var medium_words: Array[Dictionary] = []
-var current_level: String = "easy"
-var selected_word: String = ""
-var selected_hint: String = ""
-var hint_visible: bool = false
+var current_level := "easy"
+var selected_word := ""
+var selected_hint := ""
+var hint_visible := false
 var guessed_letters: Dictionary = {}
 var letter_buttons: Dictionary = {}
-var misses: int = 0
+var misses := 0
 
 func _ready() -> void:
 	print("Game.gd _ready(), owner:", get_owner(), " name:", name)
@@ -45,13 +45,13 @@ func _load_words_from_json(path: String) -> Array[Dictionary]:
 	print("Attempting to load scroll from: " + path)
 	var loaded_words: Array[Dictionary] = []
 	if not FileAccess.file_exists(path):
-		var runtime: String = "Web" if OS.has_feature("web") else OS.get_name()
+		var runtime := "Web" if OS.has_feature("web") else OS.get_name()
 		push_error("Words file is not accessible at path '%s' (runtime: %s). Verify the filename and res:// path in the export." % [path, runtime])
 		return loaded_words
 
-	var file: FileAccess = FileAccess.open(path, FileAccess.READ)
+	var file := FileAccess.open(path, FileAccess.READ)
 	if file == null:
-		var runtime: String = "Web" if OS.has_feature("web") else OS.get_name()
+		var runtime := "Web" if OS.has_feature("web") else OS.get_name()
 		push_error("Could not open words file at path '%s' (runtime: %s)." % [path, runtime])
 		return loaded_words
 
@@ -85,8 +85,8 @@ func build_keyboard() -> void:
 	letter_buttons.clear()
 
 	for code in range(65, 91):
-		var letter: String = char(code)
-		var button: Button = Button.new()
+		var letter := char(code)
+		var button := Button.new()
 		button.text = letter
 		button.custom_minimum_size = Vector2(60, 60)
 		button.add_theme_font_size_override("font_size", 38)
@@ -103,14 +103,14 @@ func build_keyboard() -> void:
 		letter_buttons[letter] = button
 
 func start_new_game() -> void:
-	var active_words: Array[Dictionary] = easy_words if current_level == "easy" else medium_words
+	var active_words := easy_words if current_level == "easy" else medium_words
 	if active_words.is_empty():
 		status_label.text = "No words loaded for %s level." % current_level.capitalize()
 		return
 
-	var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+	var rng := RandomNumberGenerator.new()
 	rng.randomize()
-	var entry: Dictionary = active_words[rng.randi_range(0, active_words.size() - 1)]
+	var entry := active_words[rng.randi_range(0, active_words.size() - 1)]
 	selected_word = String(entry.get("word", ""))
 	selected_hint = String(entry.get("hint", ""))
 	hint_visible = false
@@ -130,14 +130,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not (event is InputEventKey):
 		return
 
-	var key_event: InputEventKey = event as InputEventKey
+	var key_event := event as InputEventKey
 	if not key_event.pressed or key_event.echo:
 		return
 
 	if key_event.keycode < KEY_A or key_event.keycode > KEY_Z:
 		return
 
-	var letter: String = char(key_event.keycode).to_upper()
+	var letter := char(key_event.keycode).to_upper()
 	process_guess(letter)
 
 func _on_letter_button_pressed(letter: String) -> void:
@@ -171,14 +171,14 @@ func disable_letter_button(letter: String) -> void:
 	if not letter_buttons.has(letter):
 		return
 
-	var button: Button = letter_buttons[letter] as Button
+	var button := letter_buttons[letter] as Button
 	if button:
 		button.disabled = true
 
 func update_ui() -> void:
 	var masked_letters: PackedStringArray = []
 	for i in selected_word.length():
-		var current: String = selected_word[i]
+		var current := selected_word[i]
 		if current == " ":
 			masked_letters.append("  ")
 		elif guessed_letters.has(current):
@@ -205,7 +205,7 @@ func check_game_state() -> void:
 
 func is_word_complete() -> bool:
 	for i in selected_word.length():
-		var current: String = selected_word[i]
+		var current := selected_word[i]
 		if current != " " and not guessed_letters.has(current):
 			return false
 	return true
