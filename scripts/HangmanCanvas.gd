@@ -11,43 +11,44 @@ func set_wrong_guesses(value: int) -> void:
 func _draw() -> void:
 	var width := size.x
 	var height := size.y
-	var base_scale : float = min(width, height)
-	var line_color := Color("#dbeafe")
-	var body_color := Color("#fca5a5")
-	var thickness := 6.0
+	var panel := Rect2(width * 0.15, height * 0.06, width * 0.7, height * 0.88)
+	var line_color := Color("#d6c7a0")
+	var frame_color := Color("#3a2f1f")
+	var door_color := Color("#6f4e37")
+	var lock_color := Color("#c9a227")
+	var shadow_color := Color("#1e293b")
 
-	# Gallows
-	draw_line(Vector2(width * 0.1, height * 0.9), Vector2(width * 0.8, height * 0.9), line_color, thickness)
-	draw_line(Vector2(width * 0.22, height * 0.9), Vector2(width * 0.22, height * 0.1), line_color, thickness)
-	draw_line(Vector2(width * 0.22, height * 0.1), Vector2(width * 0.62, height * 0.1), line_color, thickness)
-	draw_line(Vector2(width * 0.62, height * 0.1), Vector2(width * 0.62, height * 0.2), line_color, thickness)
+	# Vault frame and door
+	draw_rect(panel.grow(10), frame_color, true)
+	draw_rect(panel, door_color, true)
+	draw_rect(panel, line_color, false, 4.0)
 
-	var rope_end := Vector2(width * 0.62, height * 0.2)
-	var head_radius := base_scale * 0.08
-	var torso_length := base_scale * 0.24
-	var arm_length := base_scale * 0.14
-	var leg_length := base_scale * 0.18
-	var leg_spread := base_scale * 0.10
+	# Door crossbars
+	var h_center := panel.position.y + panel.size.y * 0.5
+	var v_center := panel.position.x + panel.size.x * 0.5
+	draw_line(Vector2(panel.position.x + 20, h_center), Vector2(panel.end.x - 20, h_center), line_color, 6.0)
+	draw_line(Vector2(v_center, panel.position.y + 20), Vector2(v_center, panel.end.y - 20), line_color, 6.0)
 
-	# Keep all body parts centered and connected under the rope end.
-	var head_center := rope_end + Vector2(0.0, head_radius)
-	var neck := head_center + Vector2(0.0, head_radius)
-	var hip := neck + Vector2(0.0, torso_length)
-	var left_hand := neck + Vector2(-arm_length, arm_length)
-	var right_hand := neck + Vector2(arm_length, arm_length)
-	var left_foot := hip + Vector2(-leg_spread, leg_length)
-	var right_foot := hip + Vector2(leg_spread, leg_length)
+	# Lock dial in the center
+	var dial_center := panel.get_center()
+	var dial_radius := min(panel.size.x, panel.size.y) * 0.12
+	draw_circle(dial_center, dial_radius * 1.2, shadow_color)
+	draw_circle(dial_center, dial_radius, lock_color)
+	draw_circle(dial_center, dial_radius * 0.35, frame_color)
 
-	if wrong_guesses >= 1:
-		draw_circle(head_center, head_radius, body_color)
-		draw_circle(head_center, head_radius * 0.75, Color("#0f172a"))
-	if wrong_guesses >= 2:
-		draw_line(neck, hip, body_color, thickness)
-	if wrong_guesses >= 3:
-		draw_line(neck, left_hand, body_color, thickness)
-	if wrong_guesses >= 4:
-		draw_line(neck, right_hand, body_color, thickness)
-	if wrong_guesses >= 5:
-		draw_line(hip, left_foot, body_color, thickness)
-	if wrong_guesses >= 6:
-		draw_line(hip, right_foot, body_color, thickness)
+	# Staged runes / lock failures (6 parts)
+	var rune_color := Color("#fca5a5")
+	var runes := [
+		Vector2(panel.position.x + panel.size.x * 0.2, panel.position.y + panel.size.y * 0.22),
+		Vector2(panel.position.x + panel.size.x * 0.8, panel.position.y + panel.size.y * 0.22),
+		Vector2(panel.position.x + panel.size.x * 0.2, panel.position.y + panel.size.y * 0.78),
+		Vector2(panel.position.x + panel.size.x * 0.8, panel.position.y + panel.size.y * 0.78),
+		Vector2(panel.position.x + panel.size.x * 0.5, panel.position.y + panel.size.y * 0.14),
+		Vector2(panel.position.x + panel.size.x * 0.5, panel.position.y + panel.size.y * 0.86),
+	]
+
+	for i in range(wrong_guesses):
+		var pos := runes[i]
+		draw_circle(pos, 14.0, rune_color)
+		draw_line(pos + Vector2(-10, 0), pos + Vector2(10, 0), frame_color, 3.0)
+		draw_line(pos + Vector2(0, -10), pos + Vector2(0, 10), frame_color, 3.0)
