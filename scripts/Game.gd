@@ -10,8 +10,6 @@ const MAX_MISSES := 6
 @onready var status_label: Label = %StatusLabel
 @onready var keyboard_row_1: HBoxContainer = %KeyboardRow1
 @onready var keyboard_row_2: HBoxContainer = %KeyboardRow2
-@onready var keyboard_row_3: HBoxContainer = %KeyboardRow3
-@onready var keyboard_row_4: HBoxContainer = %KeyboardRow4
 @onready var new_game_button: Button = %NewGameButton
 @onready var hint_button: Button = %HintButton
 @onready var hint_label: Label = %HintLabel
@@ -78,28 +76,19 @@ func build_keyboard() -> void:
 		child.queue_free()
 	for child in keyboard_row_2.get_children():
 		child.queue_free()
-	for child in keyboard_row_3.get_children():
-		child.queue_free()
-	for child in keyboard_row_4.get_children():
-		child.queue_free()
 	letter_buttons.clear()
 
 	for code in range(65, 91):
 		var letter := char(code)
 		var button := Button.new()
 		button.text = letter
-		button.custom_minimum_size = Vector2(60, 60)
-		button.add_theme_font_size_override("font_size", 38)
+		button.custom_minimum_size = Vector2(44, 44)
 		button.focus_mode = Control.FOCUS_NONE
 		button.pressed.connect(_on_letter_button_pressed.bind(letter))
-		if code <= 71:
+		if code <= 77:
 			keyboard_row_1.add_child(button)
-		elif code <= 78:
-			keyboard_row_2.add_child(button)
-		elif code <= 85:
-			keyboard_row_3.add_child(button)
 		else:
-			keyboard_row_4.add_child(button)
+			keyboard_row_2.add_child(button)
 		letter_buttons[letter] = button
 
 func start_new_game() -> void:
@@ -221,12 +210,6 @@ func _all_keyboard_buttons() -> Array[Button]:
 		if child is Button:
 			buttons.append(child)
 	for child in keyboard_row_2.get_children():
-		if child is Button:
-			buttons.append(child)
-	for child in keyboard_row_3.get_children():
-		if child is Button:
-			buttons.append(child)
-	for child in keyboard_row_4.get_children():
 		if child is Button:
 			buttons.append(child)
 	return buttons
