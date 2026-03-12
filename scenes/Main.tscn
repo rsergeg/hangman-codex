@@ -37,38 +37,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_bottom = 24
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=318454267]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 12
+theme_override_constants/separation = 16
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1991343119]
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "The Vault of Echoes"
+theme_override_font_sizes/font_size = 48
+text = "Hangman"
 horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="HangmanCanvas" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1083729538]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 240)
+custom_minimum_size = Vector2(0, 280)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 1.1
 script = ExtResource("2")
 
 [node name="WordLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1455152351]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 42
 text = "_ _ _ _"
 horizontal_alignment = 1
 
@@ -76,54 +72,34 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 22
 text = "Wrong guesses: 0/6"
 horizontal_alignment = 1
 
 [node name="KeyboardContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1898219011]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 1.2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 8
 
 [node name="KeyboardRow1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/KeyboardContainer" unique_id=1898219012]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 10
+size_flags_horizontal = 4
+theme_override_constants/separation = 8
 alignment = 1
 
 [node name="KeyboardRow2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/KeyboardContainer" unique_id=1898219013]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="KeyboardRow3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/KeyboardContainer" unique_id=1898219014]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="KeyboardRow4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/KeyboardContainer" unique_id=1898219015]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 10
+size_flags_horizontal = 4
+theme_override_constants/separation = 8
 alignment = 1
 
 [node name="StatusLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2130675998]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 28
 text = "Pick a letter"
 horizontal_alignment = 1
 
@@ -136,17 +112,11 @@ alignment = 1
 [node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsRow" unique_id=252445413]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 14
 text = "New Game"
 
 [node name="LevelButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsRow" unique_id=133700004]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
-theme_override_constants/h_separation = 18
-theme_override_constants/v_separation = 14
 text = "Easy"
 
 [node name="HintContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1123105026]
@@ -159,9 +129,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 toggle_mode = true
-theme_override_font_sizes/font_size = 30
-theme_override_constants/h_separation = 16
-theme_override_constants/v_separation = 12
 text = "Show Hint"
 
 [node name="HintLabel" type="Label" parent="MarginContainer/VBoxContainer/HintContainer" unique_id=133700002]
