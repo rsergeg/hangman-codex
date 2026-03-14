@@ -88,8 +88,8 @@ func build_keyboard() -> void:
 		var letter := char(code)
 		var button := Button.new()
 		button.text = letter
-		button.custom_minimum_size = Vector2(60, 60)
-		button.add_theme_font_size_override("font_size", 38)
+		button.custom_minimum_size = Vector2(58, 58)
+		button.add_theme_font_size_override("font_size", 42)
 		button.focus_mode = Control.FOCUS_NONE
 		button.pressed.connect(_on_letter_button_pressed.bind(letter))
 		if code <= 71:
